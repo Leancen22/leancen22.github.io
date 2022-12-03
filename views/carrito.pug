@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+        script(src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js")
+        link(rel="stylesheet", href="../css/index.css")
+        title Formulario con PUG
+    body
+        div(class="container mt-3")
+            a(href="/vista" class="btn btn-success mt-3 mb-3") Volver
+            div(class="jumbotron")
+                h2(style="color: crimson;") Carrito de compras
+                if valores_carrito.length
+                    div(class="table-container")
+                        div(class="table-header")
+                            p Nombre
+                            p Precio
+                            p Foto
+                            p Cantidad
+                        each producto in valores_carrito 
+                            div(class="producto")    
+                                p=producto.title
+                                p=producto.price 
+                                div(class="img-container")
+                                    img(src=producto.thumbnail)
+                                p=producto.cantidad
+
+                    button(class="comprar btn btn-success mt-3") Comprar
+                else 
+                    h3(class="alert alert-warning") No hay productos

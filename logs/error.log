@@ -1,0 +1,4 @@
+[2022-11-14T22:11:36.972] [ERROR] default - Ha ocurrido un error ValidationError: title: Path `title` is required., price: Path `price` is required., thumbnail: Path `thumbnail` is required.
+[2022-11-14T22:16:23.523] [ERROR] default - Ha ocurrido un error en mensajes
+[2022-11-14T22:16:56.331] [ERROR] default - Ha ocurrido un error en mensajes
+[2022-11-23T20:05:55.750] [ERROR] default - Ha ocurrido un error en mensajes

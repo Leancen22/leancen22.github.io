@@ -1,0 +1,28 @@
+div(class="jumbotron")
+    h1(style="color: blue;") Ingrese datos
+    br
+    form(action="/productos" method="post")
+        div(class="form-group")
+            label(for="title")
+                b Nombre
+            input(id="title" class="form-control" name="title" type="text")
+        div(class="form-group")
+            label(for="price")
+                b Precio
+            input(id="price" class="form-control" name="price" type="number")
+        div(class="form-group")
+            label(for="thumbnail")
+                b Foto URL
+            input(id="thumbnail" class="form-control" name="thumbnail" type="text")
+        button(class="btn btn-success mt-3 mb-5 btn-block" onclick="enviarProducto()") Enviar
+    hr
+    h2(style="color: crimson;") Lista de Productos
+    div(class="table-responsive")
+        table(class="table table-dark")
+            thead 
+                tr(style="color: yellow;")
+                    th Nombre
+                    th Precio
+                    th Foto
+            tbody(id="historialProductos")
+                
