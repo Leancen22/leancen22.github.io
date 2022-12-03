@@ -1,0 +1,50 @@
+extends layouts/main
+
+block vista
+    if username
+        div(class="jumbotron")
+            div(style="display: flex; gap: 15px; align-items: center;")
+                img(src=avatar width="100px")
+                div 
+                    h1(style="color: blue;") Bienvenido #{username}!
+                    p #{email}
+            a(href="/logout" class="btn btn-success mt-3" style="margin-right: 10px;") Desloguear
+            a(href="/carrito" class="btn btn-success mt-3") Ver carrito
+    
+    div(class="jumbotron")
+        h1(style="color: blue;") Ingrese datos
+        br
+        form(action="/productos" method="post")
+            div(class="form-group")
+                label(for="title")
+                    b Nombre
+                input(id="title" class="form-control" name="title" type="text")
+            div(class="form-group")
+                label(for="price")
+                    b Precio
+                input(id="price" class="form-control" name="price" type="number")
+            div(class="form-group")
+                label(for="thumbnail")
+                    b Foto URL
+                input(id="thumbnail" class="form-control" name="thumbnail" type="text")
+            button(class="btn btn-success mt-3 mb-5 btn-block" onclick="enviarProducto()") Enviar
+        hr
+        h2(style="color: crimson;") Lista de Productos
+        if productos.length
+            div(class="table-container")
+                div(class="table-header")
+                    p Nombre
+                    p Precio
+                    p Foto
+                    p Acciones
+                each producto in productos
+                    div(class="producto")    
+                        p=producto.title
+                        p=producto.price
+                        div(class="img-container")
+                            img(src=producto.thumbnail width="30")
+                        button(data-id=producto._id class="agregar btn btn-success mt-3") Agregar al Carrito
+                        button(data-id=producto._id class="eliminar btn btn-danger mt-3") Eliminar del Carrito
+        else 
+            h3(class="alert alert-warning") No hay productos
+    include partials/chat

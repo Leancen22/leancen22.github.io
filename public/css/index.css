@@ -1,0 +1,56 @@
+
+
+.producto {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 1rem 0;
+}
+
+/*************/
+/* Productos */
+/*************/
+.productos {
+  width: 100%;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  background-color: rgb(49, 49, 49);
+  padding: 0.5rem;
+  color: white;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+}
+
+.producto {
+  grid-template-columns: repeat(5, 20%);
+  margin-top: 0.5rem;
+}
+
+.producto::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: whitesmoke;
+}
+
+.producto::after {
+  top: 0;
+}
+
+.btn-agregar {
+  margin: 0;
+  padding-inline: 0.5rem;
+  width: auto;
+}

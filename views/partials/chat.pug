@@ -1,0 +1,33 @@
+div(class="jumbotron")
+    h3(style="color: blue;") Centro de Mensajes
+    div(id="porcentaje")
+    br
+    form()
+        div(class="form-group")
+            label(for="firstname")
+                b firstname
+            input(id="firstname" class="form-control" name="firstname" type="text" required)
+            label(for="lastname")
+                b lastname
+            input(id="lastname" class="form-control" name="lastname" type="text" required)
+            label(for="email")
+                b email
+            input(id="email" class="form-control" name="email" type="email" required)
+            label(for="edad")
+                b edad
+            input(id="edad" class="form-control" name="edad" type="text" required)
+            label(for="alias")
+                b alias
+            input(id="alias" class="form-control" name="alias" type="text" required)
+            label(for="avatar")
+                b avatar
+            input(id="avatar" class="form-control" name="avatar" type="text" required)
+        hr
+        div(id="historialChat")
+        div(class="form-group mt-3")
+            label(for="Mensajes")
+                b Mensajes
+            textarea(id="contenidoMensaje" name="mensaje", cols="3" class="form-control") 
+        button(class="btn btn-success mt-3 mb-5 btn-block" onclick="enviarMensaje()") Enviar
+    
+    
